@@ -3,13 +3,13 @@ package com.gos.security;
 import io.jsonwebtoken.*;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
-
 import java.util.Date;
+import com.gos.security.UserPrincipal;
 
 @Component
 public class JwtTokenProvider {
     
-    private final String jwtSecret = "your-ultra-secure-secret";
+    private final String jwtSecret = "secretKey";
     private final int jwtExpirationMs = 86400000; // 24h
 
     public String generateToken(Authentication authentication) {
