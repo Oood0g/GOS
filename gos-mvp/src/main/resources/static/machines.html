@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Máquinas - GOS</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Cabeçalho compartilhado -->
+        <div id="header"></div>
+        
+        <main>
+            <h1>Gestão de Máquinas</h1>
+            <button id="addMachine" class="btn btn-primary">Nova Máquina</button>
+            
+            <table id="machinesTable">
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Descrição</th>
+                        <th>Modelo</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </main>
+    </div>
+
+    <script src="/js/lib/axios.min.js"></script>
+    <script src="/js/api/api-config.js"></script>
+    <script src="/js/api/machines-api.js"></script>
+    <script src="/js/modules/machines.js"></script>
+</body>
+</html>

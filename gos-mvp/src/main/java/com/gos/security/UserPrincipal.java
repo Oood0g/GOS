@@ -7,6 +7,9 @@ import java.util.Collection;
 import java.util.Collections;
 
 public class UserPrincipal implements UserDetails {
+    private String username;
+    private String password;
+    private Collection<? extends GrantedAuthority> authorities;
     
     private final User user;
 
