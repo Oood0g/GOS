@@ -1,0 +1,27 @@
+<!-- No HTML -->
+<canvas id="costDistributionChart"></canvas>
+<button onclick="generatePDF()" class="btn btn-danger">Exportar PDF</button>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    // Gráfico de Rosca
+    fetch('/api/reports/cost-distribution')
+        .then(response => response.json())
+        .then(data => {
+            new Chart(document.getElementById('costDistributionChart'), {
+                type: 'doughnut',
+                data: {
+                    labels: ['Preventiva', 'Corretiva'],
+                    datasets: [{
+                        data: [data.preventive, data.corrective],
+                        backgroundColor: ['#4e73df', '#1cc88a']
+                    }]
+                }
+            });
+        });
+
+    // PDF
+    function generatePDF() {
+        window.open('/api/reports/pdf', '_blank');
+    }
+</script>

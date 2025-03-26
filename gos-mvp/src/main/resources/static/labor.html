@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Controle de Mão-de-Obra</title>
+    <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <!-- Menu igual ao dashboard -->
+    </nav>
+
+    <div class="container mt-4">
+        <h2>Registro de Mão-de-Obra</h2>
+        <form id="laborForm">
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label class="form-label">Ordem de Serviço</label>
+                    <select class="form-select" id="osNumber" required></select>
+                </div>
+                <!-- Outros campos -->
+            </div>
+            <button type="submit" class="btn btn-primary mt-3">Salvar</button>
+        </form>
+
+        <table class="table mt-4">
+            <thead>
+                <tr>
+                    <th>Técnico</th>
+                    <th>Horas</th>
+                    <th>Custo Total</th>
+                </tr>
+            </thead>
+            <tbody id="laborTable"></tbody>
+        </table>
+    </div>
+
+    <script src="/js/labor.js"></script>
+</body>
+</html>
